@@ -1,13 +1,17 @@
 <template>
   <div class="hello">
     <!-- <h1>{{ msg }}</h1> -->
-      <ul>
+      <ul class="groupInfo">
         <li 
-        v-for="item in groupList" 
-        v-bind:key="item.id">
-          <el-checkbox v-model="checked1" :label="item.id" border></el-checkbox>
+        v-for="(item, idx) in groupList" 
+        v-bind:key="item.id"
+        class="groupItem"
+        >
+          <el-checkbox v-model="checkboxGroup[idx]" :label="item.id" border></el-checkbox>
         </li>
       </ul>
+
+      <div>多选框情况：{{checkboxGroup}}</div>
   </div>
 </template>
 
@@ -17,15 +21,24 @@ export default {
   props: {
     groupList: Array
   },
+
   data () {
     return {
-      checked1: true,
-      checked2: false,
-      checked3: false,
-      checked4: true,
-      checkboxGroup1: [],
-      checkboxGroup2: []
+      checkboxGroup: [false, false, false, false, false, false, false, false, false, false, false, ],
     };
+  },
+
+  computed: {
+    // // 计算属性的 getter
+    // checkboxGroup: function() {
+    //   // `this` 指向 vm 实例
+    //   let checkboxGroup = []
+    //   for(let i=0; i<11; i++) {
+    //     checkboxGroup[i] = false
+    //   }
+    //   return checkboxGroup
+    // 不可修改
+    // }
   }
 }
 </script>
@@ -45,5 +58,15 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.groupInfo {
+  display: flex;
+  flex-direction: column;
+}
+.groupInfo .groupItem {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 </style>
