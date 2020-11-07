@@ -1,0 +1,38 @@
+<template>
+  <div class="hello">
+    <!-- <h1>{{ msg }}</h1> -->
+      <ul class="groupInfo">
+        <li 
+        v-for="(item, idx) in groupList" 
+        v-bind:key="item.id"
+        class="groupItem"
+        >
+          <el-checkbox v-model="checkboxGroup[idx]" :label="item.id" border></el-checkbox>
+        </li>
+      </ul>
+
+      <div>多选框情况：{{checkboxGroup}}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'voteBox',
+  props: {
+    groupList: Array
+  },
+
+  data () {
+    return {
+    }
+  },
+
+  computed: {
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>
