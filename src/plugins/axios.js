@@ -39,7 +39,9 @@ _axios.interceptors.response.use(
   }
 );
 
-Plugin.install = function(Vue, options) {
+// Plugin.install = function(Vue, options) {
+// 多余的变量options都不允许，啧啧啧
+Plugin.install = function(Vue) {
   Vue.axios = _axios;
   window.axios = _axios;
   Object.defineProperties(Vue.prototype, {

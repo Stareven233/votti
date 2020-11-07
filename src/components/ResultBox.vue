@@ -1,12 +1,11 @@
 <template>
-  <div class="loginBox">
-    登录页面
+  <div class="resultBox">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'loginBox',
+  name: 'resultBox',
   props: {
   },
 
