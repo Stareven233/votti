@@ -10,8 +10,11 @@
       </li>
     </ul>
 
-      <!-- <div>多选框情况：{{groupList}}</div> -->
-     <el-button round @click="onVote">确认投票</el-button>
+    <!-- <div>多选框情况：{{groupList}}</div> -->
+    <div class="buttonRow">
+    <el-button round @click="onVote">确认投票</el-button>
+    <el-button round @click="onNavToResult">查看结果</el-button>
+    </div>
   </div>
 </template>
 
@@ -76,6 +79,10 @@ export default {
           alert('不可多次投票')
         }
       })
+    },
+
+    onNavToResult() {
+      this.$router.push({ path: '/result' })
     }
   },
 }
@@ -88,6 +95,11 @@ export default {
   width: 80%;
   margin: 0 auto;
 }
+.buttonRow {
+  display: flex;
+  justify-content:space-around;
+}
+
 .groupInfo {
   display: flex;
   flex-direction: row;
