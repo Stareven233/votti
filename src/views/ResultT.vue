@@ -2,30 +2,34 @@
 <template>
   <!-- 教师查看汇总的页面，直接从特殊路由进，不用从/进去登录 -->
   <div class="resultT">
-    <el-table
-    class="resultTable"
-    :data="tableData"
-    max-height=560
-    highlight-current-row
-    style="width: 100%">
-      <el-table-column
-        prop="id"
-        label="序号"
-        width="100">
-      </el-table-column>
-      <el-table-column
-        prop="gid"
-        label="被投组号"
-        width="100">
-      </el-table-column>
-      <el-table-column
-        prop="uid"
-        label="投票者"
-        width="120">
-      </el-table-column>
-    </el-table>
+    <el-header>投票情况详情</el-header>
 
-    <resultBox class="resultTable"></resultBox>
+    <el-main>
+      <el-table
+      class="resultTable"
+      :data="tableData"
+      max-height=560
+      highlight-current-row
+      style="width: 100%">
+        <el-table-column
+          prop="id"
+          label="序号"
+          width="100">
+        </el-table-column>
+        <el-table-column
+          prop="gid"
+          label="被投组号"
+          width="100">
+        </el-table-column>
+        <el-table-column
+          prop="uid"
+          label="投票者"
+          width="120">
+        </el-table-column>
+      </el-table>
+
+      <resultBox class="resultTable"></resultBox>
+    </el-main>
   </div>
 </template>
 
@@ -64,7 +68,7 @@ export default {
   margin-top: 60px;
 }
 
-.resultT {
+.el-main {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -74,7 +78,7 @@ export default {
   align-content: space-between;
 }
 
-.resultT .resultTable {
+.el-main .resultTable {
   flex: 0 0 35%;
   /* margin: 0 20px; */
 }

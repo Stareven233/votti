@@ -1,5 +1,7 @@
 <template>
   <div class="voteBox">
+    <el-header>投票页面</el-header>
+    
     <ul class="groupInfo">
       <li 
       v-for="(item, idx) in groupList" 

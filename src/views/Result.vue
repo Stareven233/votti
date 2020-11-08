@@ -1,7 +1,10 @@
 
 <template>
   <!-- 学生查看汇总的页面，要先从/进行登录并选择结果才可查看 -->
-  <resultBox></resultBox>
+  <div class="result">
+    <el-header>投票情况汇总</el-header>
+    <resultBox></resultBox>
+  </div>
 </template>
 
 <script>
