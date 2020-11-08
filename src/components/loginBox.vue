@@ -45,6 +45,7 @@ export default {
         // console.log(res)
         if(res.data === 'sb') {
           // 跳转到投票页面
+          localStorage.setItem('loginUser', this.form.uid)
           this.$router.push({ path: '/vote' })
         }
         else {

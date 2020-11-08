@@ -1,6 +1,6 @@
 <template>
   <!-- 默认一进来就是登录界面 -->
-  <voteBox :groupList="groupList"></voteBox>
+  <voteBox></voteBox>
 </template>
 
 <script>
@@ -14,31 +14,8 @@ export default {
 
   data() {
     return {
-      groupList: [
-        {id: 'A1', num: 22},
-        {id: 'A2', num: 341},
-        {id: 'A3', num: 123},
-        {id: 'A4', num: 123},
-        {id: 'A5', num: 123},
-        {id: 'A6', num: 123},
-        {id: 'A7', num: 123},
-        {id: 'A8', num: 123},
-        {id: 'A9', num: 123},
-        {id: 'A10', num: 123},
-        {id: 'A11', num: 123},
-      ]
     };
   },
-
-  mount() {
-    const baseUrl = ''
-    this.$axios.post(baseUrl + '', {
-      param1: 'heihei'
-    })
-    .then(res => {
-      this.$set('groupList', res.groupList)
-    })
-  }
 }
 </script>
 
