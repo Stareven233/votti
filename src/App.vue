@@ -32,4 +32,8 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+::selection {
+  color: #6dabe9;
+}
 </style>

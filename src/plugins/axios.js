@@ -12,6 +12,8 @@ let config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
+  baseURL: 'http://150.158.153.134:8082'
+  // baseURL: '/api'
 };
 
 const _axios = axios.create(config);
