@@ -55,6 +55,13 @@ export default {
   methods: {
     onVote() {
       const uid = localStorage.getItem('loginUser')
+      let groupData = []
+      this.groupList.forEach(function(val, idx) {
+        if(val.checked) {
+          groupData.push(idx+1)
+        }
+      })
+
       this.$axios({
         url: '/Vote', 
         method: 'post',
@@ -63,12 +70,7 @@ export default {
         },
         data: {
           UID: uid,
-          GID: this.groupList.map(function(val, idx) {
-            if(val.checked) {
-              return idx+1
-            }
-            return null
-          })
+          GID: groupData,
         },
       })
       .then(res => {

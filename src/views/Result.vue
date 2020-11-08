@@ -8,7 +8,7 @@
 import resultBox from '@/components/resultBox.vue'
 
 export default {
-  name: 'Vote',
+  name: 'Result',
   components: {
     resultBox
   },
